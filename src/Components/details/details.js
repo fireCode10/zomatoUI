@@ -3,6 +3,7 @@ import '../../Styles/details.css';
 import axios from 'axios';
 import queryString from 'query-string';
 import GooglePayButton from '@google-pay/button-react';
+import { API_URL } from '../../properties';
 
 // Class Component
 class Details extends React.Component {
@@ -19,7 +20,7 @@ class Details extends React.Component {
     axios(
         {
             method: 'GET',
-            url: `http://localhost:8089/restaurant/getRestaurantById/${restaurantId}`,
+            url: `${API_URL}/restaurant/getRestaurantById/${restaurantId}`,
             headers: { 'Content-Type': 'application/json' }
         }
     ).then(response => this.setState({ restaurantData: response.data })).catch()

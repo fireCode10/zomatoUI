@@ -3,6 +3,7 @@ import axios from 'axios';
 import { MuiThemeProvider, createTheme } from '@material-ui/core/styles';
 import {Button} from '@material-ui/core';
 import '../../Styles/wallpaper.css';
+import { API_URL } from '../../properties';
 import { withRouter } from 'react-router-dom';
 import Modal from 'react-modal';
 import { GoogleLogin } from 'react-google-login';
@@ -81,7 +82,7 @@ class WallPaper extends React.Component{
     axios(
       {
           method: 'GET',
-          url:`http://localhost:8089/restaurant/getRestaurantByName?name=${locName}`,
+          url:`${API_URL}/restaurant/getRestaurantByName?name=${locName}`,
           headers: {'Content-Type': 'application/json'}
       }
   ).then(response => this.setState({ restaurants: response.data})).catch()
