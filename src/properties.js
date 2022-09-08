@@ -1,3 +1,3 @@
 module.exports = {
-    API_URL: "https://assignment8-ms.herokuapp.com/"
+    API_URL: "https://assignment8-ms.herokuapp.com"
 }
